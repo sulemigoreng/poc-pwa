@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.glib-nav-container{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 27.08%, rgba(255, 255, 255, 0) 100%);
+}
+
+.glib-nav{
+    font-weight: 600;
+}
+
+.glib-nav .nav-link{
+    color:#A0A3B1;
+}
+
+.glib-nav .nav-link.active{
+    color:#8E97FD;
+    border-bottom: 2px solid #8E97FD;
+}
+
+.glib-nav .nav-user{
+    border-radius: 18px;
+    background-color: #8E97FD;
+    color: white;
+}

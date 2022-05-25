@@ -6,12 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap Site</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <h1>Hello-Bootstrap!</h1>
+    <div class="container-fluid">
+        <div class="row justify-content-between glib-nav-container p-4">
+            <div class="col-auto">
+                <img src="/img/Logo.png" />
+            </div>
+            <div class="col-auto">
+                <nav class="nav glib-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">My Books</a>
+                    <a class="nav-link nav-user" href="#"><i class="fa-regular fa-user"></i></a>
+                </nav>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script src="/js/ui.js"></script>
