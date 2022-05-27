@@ -1,0 +1,16 @@
+{
+    "name": "Garuda Library",
+    "short_name": "GarudaLib",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "img/Logo.png",
+            "type": "image/png",
+            "sizes": "212x30"
+        }
+    ]
+}
