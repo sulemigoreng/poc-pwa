@@ -49,6 +49,7 @@ async function getBooks() {
             console.log(error);
         }
     } else {
+        alert('anda sedang membuka website dalam versi offline');
         console.log("getting data offline");
         var hasil = await getBooksFromDB()
             .then((result) => {

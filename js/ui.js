@@ -68,6 +68,7 @@ async function renderBooks() {
                             <div class="gg-book-cover">
                                 <img src="img/2767052 1.png" />
                             </div>
+                            ${book.status === 'Pending' ? '<div class="w-100 color-yellow mt-2">[Pending]</div>' : ''}
                             <div class="w-100 mt-2 gg-book-judul" style="font-weight:bold;font-size: 1.2rem;">${book.title}</div>
                             <div class="w-100 gg-penulis">${book.author}</div>
                         </div>`;
