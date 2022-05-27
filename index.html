@@ -18,36 +18,67 @@
 </head>
 
 <body>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="text" name="bookTitle" id="bookTitle" placeholder="Book Title"
+                            class="form-control">
+                        <input type="text" name="bookAuthor" id="bookAuthor" placeholder="Author"
+                            class="form-control mt-2">
+                        <input type="date" name="releaseDate" id="releaseDate" placeholder="Release Date"
+                            class="form-control mt-2">
+                        <select name="bookGenre" id="bookGenre" class="form-select mt-2">
+                            <option value="" selected>Genre</option>
+                        </select>
+                        <input type="text" name="bookPages" id="bookPages" placeholder="Total Pages"
+                            class="form-control mt-2">
+                        <textarea name="bookSynopsis" id="bookSynopsis" class="form-control mt-2"></textarea>
+                        <input type="file" name="bookCover" id="bookCover" class="form-control mt-2">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <form>
-              <input type="text" name="bookTitle" id="bookTitle" placeholder="Book Title" class="form-control">
-              <input type="text" name="bookAuthor" id="bookAuthor" placeholder="Author" class="form-control mt-2"> 
-              <input type="date" name="releaseDate" id="releaseDate" placeholder="Release Date" class="form-control mt-2">
-              <select name="bookGenre" id="bookGenre" class="form-select mt-2" >
-                  <option value="" selected>Genre</option>
-              </select>
-              <input type="text" name="bookPages" id="bookPages" placeholder="Total Pages" class="form-control mt-2">
-              <textarea name="bookSynopsis" id="bookSynopsis" class="form-control mt-2"></textarea>
-              <input type="file" name="bookCover" id="bookCover" class="form-control mt-2">
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add</button>
-        </div>
-      </div>
     </div>
-  </div>
+    <div class="m-add-button">
+        <a href="/pages/registerbook.html"><i class="fa-solid fa-plus"></i></a>
+    </div>
+    <div class="m-navbar-hide" id="m-navbar">
+        <div class="row py-4">
+            <div class="col-auto">
+                <div class="m-btn-back" id="m-btn-back">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+            </div>
+            <div class="col-auto">
+                <img src="img/Logo.png" />
+            </div>
+        </div>
+        <div class="row py-4">
+            <div class="col-sm-auto col-xs-12">
+                <nav class="nav m-glib-nav">
+                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" href="#">My Books</a>
+                    <a class="nav-link" href="#">My Profile</a>
+                </nav>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row justify-content-between glib-nav-container p-4">
+            <div class="col-auto align-self-center m-nav-btn" style="color:#8E97FD;" id="m-nav-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <div class="col-auto">
                 <img src="img/Logo.png" />
             </div>
@@ -65,11 +96,12 @@
                 <span>we wish you a good day</span>
             </div>
             <div class="col-auto col-xs-12">
-                <div class="row justify-content-end ">
-                    <div class="col-auto align-self-center">
-                        <div class="btn glib-btn" id="btn-add" data-bs-toggle="modal" data-bs-target="#exampleModal" >Add Book</div>
+                <div class="row glib-search">
+                    <div class="col-auto align-self-center glib-btn-container">
+                        <div class="btn glib-btn" id="btn-add" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+                            Book</div>
                     </div>
-                    <div class="col-6 align-self-center">
+                    <div class="col-sm-6 col-10 align-self-center">
                         <div class="input-group glib-ig">
                             <span class="input-group-text glib-search-icon"><i
                                     class="fa-solid fa-magnifying-glass"></i></span>
@@ -170,17 +202,17 @@
 
         </div>
         <div class="row justify-content-between glib-footer-container p-4">
-            <div class="col-auto">
+            <div class="col-sm-auto col-xs-12">
                 <img src="img/Logo.png" />
             </div>
-            <div class="col-auto">
+            <div class="col-sm-auto col-xs-12">
                 <nav class="nav glib-nav-foot">
                     <a class="nav-link" aria-current="page" href="#">Contact Us</a>
                     <a class="nav-link" href="#">Store Locator</a>
                     <a class="nav-link" href="#">FAQ</a>
                 </nav>
             </div>
-            <div class="col-auto" style="font-size:1.5em;">
+            <div class="col-sm-auto col-xs-12" style="font-size:1.5em;">
                 <span class="fa-brands fa-instagram mx-2"></span>
                 <span class="fa-brands fa-facebook mx-2"></span>
                 <span class="fa-brands fa-twitter mx-2"></span>
