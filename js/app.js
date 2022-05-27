@@ -57,7 +57,6 @@ async function getBooks() {
             });
         return hasil;
     }
-
 }
 
 function storeToDB(books) {
@@ -90,4 +89,27 @@ function storeToDB(books) {
             db.close();
         };
     };
+}
+
+async function postBooks({
+    title, synopsis, cover, releaseDate, 
+    author, genre, totalPage
+}) {
+    let url = 'https://glibrary-api.staging-gi.web.id/api/Books';
+    try {
+        let page = parseInt(totalPage, 10);
+        console.log(totalPage);
+        console.log(page);
+        let res = await fetch(url, {
+            method:'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({title, synopsis, cover, releaseDate, author, genre, totalPage:parseInt(totalPage, 10)})
+        });
+        return await res.json();
+    } catch (error) {
+        console.log(error);
+    }
 }
