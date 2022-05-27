@@ -6,7 +6,7 @@ btn_add.addEventListener("click", () => {
 async function renderBooks() {
     console.log('rendering books');
     let books = await getBooks();
-    console.log(books);
+    console.log("render book data", books);
     let html = '';
     books.forEach(book => {
         let htmlBook = `<div class="item mt-4">
@@ -25,8 +25,6 @@ async function renderBooks() {
 
 renderBooks();
 
-    
-});
 
 // Mobile UI
 var btn_nav = document.getElementById("m-nav-btn");
