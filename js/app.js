@@ -7,6 +7,43 @@ if ('serviceWorker' in navigator) {
         .catch((err) => console.log('service worker not registered', err));
 }
 
+window.addEventListener('online', syncDatabase);
+
+function syncDatabase() {
+    var open = indexedDB.open("MyDatabase", 5);
+    var getBooks;
+    open.onupgradeneeded = function () {
+        var db = open.result;
+        var store = db.createObjectStore("BookObjectStore", { keyPath: "id" });
+        var index = store.createIndex("StatusIndex", ["status"]);
+    };
+    open.onsuccess = function () {
+        // Start a new transaction
+        var db = open.result;
+        var tx = db.transaction("BookObjectStore", "readonly");
+        var store = tx.objectStore("BookObjectStore");
+        var index = store.index("StatusIndex");
+
+        getBooks = index.get(["Pending"]);
+
+        getBooks.onsuccess = function () {
+            console.log("book sync result", getBooks.result);
+            var books = [];
+            books.push(getBooks.result);
+            console.log("book sync result array", books)
+            for (var i = 0; i < books.length; i++) {
+                postBooks(books[i]);
+                console.log("yang diinsert", books[i]['title']);
+            }
+        };
+
+        // Close the db when the transaction is done
+        tx.oncomplete = function () {
+            db.close();
+        };
+    };
+}
+
 function getBooksFromDB() {
     return new Promise(function (resolve, reject) {
         var open = indexedDB.open("MyDatabase", 5);
@@ -70,6 +107,7 @@ function storeToDB(books) {
     open.onupgradeneeded = function () {
         var db = open.result;
         var store = db.createObjectStore("BookObjectStore", { keyPath: "id" });
+        var index = store.createIndex("StatusIndex", ["status"]);
     };
 
     open.onsuccess = function () {
@@ -148,6 +186,7 @@ async function postBooks({
     author, genre, totalPage
 }) {
     if (navigator.onLine) {
+        console.log("postBook Online: ", title);
         let url = 'https://glibrary-api.staging-gi.web.id/api/Books';
         try {
             let page = parseInt(totalPage, 10);
