@@ -36,16 +36,17 @@
                             class="form-control mt-2">
                         <select name="bookGenre" id="bookGenre" class="form-select mt-2">
                             <option value="" selected>Genre</option>
+                            <option value="Fantasi" selected>Fantasi</option>
                         </select>
-                        <input type="text" name="bookPages" id="bookPages" placeholder="Total Pages"
+                        <input type="number" name="bookPages" id="bookPages" placeholder="Total Pages"
                             class="form-control mt-2">
                         <textarea name="bookSynopsis" id="bookSynopsis" class="form-control mt-2"></textarea>
                         <input type="file" name="bookCover" id="bookCover" class="form-control mt-2">
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Add</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-close">Close</button>
+                    <button type="button" class="btn btn-primary" id="btn-add" >Add</button>
                 </div>
             </div>
         </div>
@@ -98,7 +99,7 @@
             <div class="col-auto col-xs-12">
                 <div class="row glib-search">
                     <div class="col-auto align-self-center glib-btn-container">
-                        <div class="btn glib-btn" id="btn-add" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+                        <div class="btn glib-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
                             Book</div>
                     </div>
                     <div class="col-sm-6 col-10 align-self-center">
